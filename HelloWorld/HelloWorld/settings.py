@@ -38,7 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'sass_processor',
 ]
+# sass配置
+# STATICFILES_FINDERS = [
+#  'django.contrib.staticfiles.finders.FileSystemFinder',
+#  'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#  'sass_processor.finders.CssFinder',
+# ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,8 +87,16 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-        },
+            "libraries":{                          # 添加这边三行配置
+                'my_tags':'templatetags.my_tags'   # 添加这边三行配置        
+            }  
+        }                                    # 添加这边三行配置
     },
+]
+# 引入静态资源
+STATIC_URL = '/static/' # 别名 
+STATICFILES_DIRS = [ 
+    os.path.join(BASE_DIR, "statics"), 
 ]
 
 WSGI_APPLICATION = 'HelloWorld.wsgi.application'

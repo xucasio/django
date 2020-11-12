@@ -20,18 +20,14 @@ Including another URLconf
 #     path('admin/', admin.site.urls),
 # ]
 
-# from django.conf.urls import url
+from django.conf.urls import url
  
 # from . import views
- 
-# urlpatterns = [
-#     url(r'^$', views.hello),
-# ]
-
 from django.urls import path
  
 from . import views
  
 urlpatterns = [
+    url(r'^$', views.hello),
     path('runoob/', views.runoob),
 ]
