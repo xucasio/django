@@ -1,7 +1,6 @@
 
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Django学习笔记</title>
@@ -9,60 +8,12 @@
   <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
 </head>
 <body>
-  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Django学习笔记</a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse"
-      data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#">xucasio</a>
-      </li>
-    </ul>
-  </nav>
+  {% include "nav.html" %}
   <div class="container-fluid">
     <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-        <div class="sidebar-sticky pt-3">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#template">
-                <span data-feather="home"></span>
-                template模板
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="file"></span>
-                Orders
-              </a>
-            </li>
-          </ul>
-          <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Saved reports</span>
-            <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6> -->
-        </div>
-      </nav>
+      {% include "sidebarMenu.html" %}
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-        <div
-          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">主题</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group mr-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">导入</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">导出</button>
-            </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-              <span data-feather="calendar"></span>
-              This week
-            </button>
-          </div>
-        </div>
+        {% include "option.html" %}
         <div class="content">
           {% include "template.html" %}
         </div>
@@ -70,6 +21,7 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+  <script src="/static/plugins/jquery-3.5.1/jquery.js"></script>
   <script src="/static/plugins/bootstrap-4.5.0-dist/js/bootstrap.js"></script>
   <script src="/static/js/dashboard.js"></script>
 </body>

@@ -25,9 +25,10 @@ from django.conf.urls import url
 # from . import views
 from django.urls import path
  
-from . import views
+from . import views,testdb
  
 urlpatterns = [
     url(r'^$', views.hello),
-    path('runoob/', views.runoob),
+    path('extend/', views.extend),
+    path('testdb/', testdb.testdb),
 ]

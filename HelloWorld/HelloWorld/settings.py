@@ -39,7 +39,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'sass_processor',
+    'TestModel',
 ]
+DATABASES = { 
+    'default': 
+    { 
+        'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
+        'NAME': 'django', # 数据库名称
+        'HOST': '127.0.0.1', # 数据库地址，本机 ip 地址 127.0.0.1 
+        'PORT': 3306, # 端口 
+        'USER': 'root',  # 数据库用户名
+        'PASSWORD': 'xu123456', # 数据库密码
+    }  
+}
 # sass配置
 # STATICFILES_FINDERS = [
 #  'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -93,6 +105,7 @@ TEMPLATES = [
         }                                    # 添加这边三行配置
     },
 ]
+
 # 引入静态资源
 STATIC_URL = '/static/' # 别名 
 STATICFILES_DIRS = [ 
@@ -105,12 +118,12 @@ WSGI_APPLICATION = 'HelloWorld.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

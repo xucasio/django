@@ -2,13 +2,17 @@
 <div id="template" class="item">
   <h4 class="title">#自带过滤器和标签</h4>
   <ul class="list-group">
+    <li class="list-group-item font-weight-bold">模板语法自己查，反正记不住</li>
     <li class="list-group-item">小写过滤器 ('Name'|lower) => {{ 'Name'|lower }}</li>
     <li class="list-group-item">嵌套使用 ('Name'|first|upper) => {{ 'Name'|first|upper }}</li>
     <li class="list-group-item">切取后面...显示('a b c d e f g'|truncatewords:"6") => {{'a b c d e f g'|truncatewords:"6"}}</li>
     <li class="list-group-item">date过滤器 {{ date|date:"Y-m-d H:m:s" }}</li>
     <li class="list-group-item">safe解析html标签 {{ label|safe }}</li>
     <li class="list-group-item">外部引入include {% include "a.html" %}</li>
-    <li class="list-group-item">csrf_tokencsrf_token 用于form表单中，作用是跨站请求伪造保护。如果不用｛% csrf_token %｝标签，在用 form 表单时，要再次跳转页面会报403权限错误。用了｛% csrf_token %｝标签，在 form 表单提交数据时，才会成功。</li>
+    <li class="list-group-item">(name|default:"设置默认值") => {{ name|default:"设置默认值" }}</li>
+    <li class="list-group-item">('Hello Django'|length) => {{ name|length }}</li>
+    <li class="list-group-item">(1024|filesizeformat) => {{ num|filesizeformat }}</li>
+    <li class="list-group-item"><font class="font-weight-bold">csrf_token</font> 用于form表单中，作用是跨站请求伪造保护。如果不用｛% csrf_token %｝标签，在用 form 表单时，要再次跳转页面会报403权限错误。用了｛% csrf_token %｝标签，在 form 表单提交数据时，才会成功。</li>
   </ul>
   <h4 class="title">#自定义过滤器和标签</h4>
   <p>1 新建templatetags</p>
@@ -21,4 +25,7 @@
     <li class="list-group-item">自定义过滤器: {{ 11|my_filter:22 }}</li>
     <li class="list-group-item">自定义标签: {% my_tag1 11 22 33 %}</li>
   </ul>
+  <h4 class="title">#模板继承</h4>
+  <p>子页面要(extends "base.html"),指定会修改的部分如(block mainbody)访问/extend可以看到/p>
+    
 </div>
