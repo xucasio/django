@@ -1,0 +1,9 @@
+<div id="search" class="item">
+  <h4 class="title">#表单请求响应</h4>
+  <form action="/search" method="post">
+    <input type="text" placeholder="名称" name="name">
+    <input type="text" placeholder="年龄" name="age">
+    <input type="submit" value="提交">
+    {%csrf_token%}
+  </form>
+</div>

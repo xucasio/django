@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+ 
 from django.http import HttpResponse
+ 
 from TestModel.models import Test
  
 # 数据库操作
@@ -6,6 +9,7 @@ def testdb(request):
     # 初始化
     response = ""
     response1 = ""
+    
     
     # 通过objects这个模型管理器的all()获得所有数据行，相当于SQL中的SELECT * FROM
     list = Test.objects.all()
@@ -23,11 +27,10 @@ def testdb(request):
     Test.objects.order_by("id")
     
     # 上面的方法可以连锁使用
-    # Test.objects.filter(name="django"").order_by("name")
+    Test.objects.filter(name="runoob").order_by("id")
     
     # 输出所有数据
     for var in list:
         response1 += var.name + " "
     response = response1
     return HttpResponse("<p>" + response + "</p>")
-    # return HttpResponse("<p>我不信</p>")

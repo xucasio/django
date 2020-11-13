@@ -25,10 +25,12 @@ from django.conf.urls import url
 # from . import views
 from django.urls import path
  
-from . import views,testdb
+from . import views,testdb,search
  
 urlpatterns = [
     url(r'^$', views.hello),
     path('extend/', views.extend),
     path('testdb/', testdb.testdb),
+    url(r'^search-form$', search.search_form),
+    url(r'^search$', search.search),
 ]
